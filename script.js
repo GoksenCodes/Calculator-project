@@ -17,7 +17,7 @@ document.querySelector(".wrapper").addEventListener("click", (e) => {
         if (number) {
             console.log(`Pressed number: ${pressedNumber} — Number: ${number}`)
             number += pressedNumber ;
-        } else if(pressedNumber != 0 ) {
+        } else if(pressedNumber != 0 && pressedNumber!= ".") {
             console.log(`Pressed number: ${pressedNumber} — Number: ${number}`)
             number = pressedNumber;
         }
@@ -37,7 +37,8 @@ document.querySelector(".wrapper").addEventListener("click", (e) => {
     }
 
     if (pressedNumber == "%" ){
-        let percantage = Math(pressedNumber/1000) ;
+        let percantage = number/1000 ;
+        console.log(percantage)
         number = percantage;
     }
 
