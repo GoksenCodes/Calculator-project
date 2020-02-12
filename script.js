@@ -12,7 +12,7 @@ document.querySelector(".wrapper").addEventListener("click", (e) => {
     
     let pressedNumber = e.target.dataset.value;
 
-    if (pressedNumber != "=") {
+    if (pressedNumber != "=" && pressedNumber != "%") {
 
         if (number) {
             console.log(`Pressed number: ${pressedNumber} — Number: ${number}`)
@@ -20,6 +20,9 @@ document.querySelector(".wrapper").addEventListener("click", (e) => {
         } else if(pressedNumber != 0 && pressedNumber!= ".") {
             console.log(`Pressed number: ${pressedNumber} — Number: ${number}`)
             number = pressedNumber;
+            debugger;
+        } else if (pressedNumber == ".") {
+            number += pressedNumber
         }
 
     }
@@ -37,10 +40,13 @@ document.querySelector(".wrapper").addEventListener("click", (e) => {
     }
 
     if (pressedNumber == "%" ){
-        let percantage = number/1000 ;
+        let percantage = number/100 ;
+        debugger;
         console.log(percantage)
         number = percantage;
     }
+
+
 
     updateResult(number)
 }) ;
